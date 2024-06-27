@@ -1,0 +1,502 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+:root{
+    --color-1: #33334d;
+    --color-2: #cc41ff;
+    --color-3: orange;
+    --color-4: #fff;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins','sans-serif';
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    width: 15px;
+    /* background-image: linear-gradient(  #cc41ff 5% 30%,aqua,#cc41ff  70% 95%); */
+    background-image: linear-gradient(  #0f0c29,rgba(204, 65, 255,0.5) ,rgba(0, 255, 255,0.5),rgba(204, 65, 255,0.8) ,#0f0c29 );
+    }
+
+body::-webkit-scrollbar-thumb {
+    /* background-image:  linear-gradient( rgba(0,0,0,0),orange,rgba(0,0,0,0) ); */
+    background-color: orange;
+
+    border-radius: 40px;
+  }
+
+#cursordot{
+    height: 15px;
+    width: 15px;
+    background-color: orange;
+}
+
+#cursor{
+    height: 25px;
+    width: 25px;
+    border: 2px solid aqua;
+    /* transition: 0.1s; */
+}
+
+#cursordot, #cursor{
+    position: fixed;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 99;
+    pointer-events: none;
+    
+}
+
+#nav{
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    padding-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+
+
+#nav img{
+    padding-top: 10px;
+    height: 150px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-3);
+}
+
+#nav #main-menu ul{
+    display: flex;
+}
+
+#nav ul li a{
+    padding: 10px 20px;
+    display: block;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+#nav ul li a:hover{
+    color: var(--color-2);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+#gif1{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    position: fixed;
+    z-index: -1;
+}
+
+/* #bg{
+    width: 100%;
+    height: 100%;
+    background: url(images/1.gif);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+} */
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#page1{
+    font-family: 'Press Start 2P','sans-serif';
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#page1 h1{
+    font-size: 50px;
+    color: #cc41ff;
+    /* color: white; */
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "GAMES";
+    position: absolute;
+    color: aqua;
+    top: 2px;
+    left: -1px;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 50px;
+    /* color: white; */
+    color: aqua;
+    position: relative;
+}
+
+#page1 h2::before{
+    content: "CORNER";
+    position: absolute;
+    color: #cc41ff;
+    top: 3px;
+    left: -1px;
+    z-index: -1;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.category{
+    /* background-color: #000023; */
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.category a{
+    display: block;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.category a:hover{
+    color: var(--color-2);
+}
+
+.cards-container{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+
+
+
+
+.card-link{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    /* background-color: aqua; */
+    background-image: linear-gradient(to right, rgba(0,255,255,0.8), rgba(204, 65, 255, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all ease 1s;
+}
+
+.overlay h2{
+    font-family: 'Press Start 2P','sans-serif';
+    color: orange;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px black;
+}
+
+.cards:hover .overlay{
+    opacity: 1;
+}
+
+#footer{
+    margin-top: 10vh;
+    height: 5vh;
+    width: 100%;
+    background-image: linear-gradient( to right, #0f0c29, #0f0c29 10% 20%, #110d35 ,#0f0c29 80% 90% #0f0c29);
+    background-color: #0f0c29;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+#footer span{
+    color: #cc41ff;
+}
+#footer p{
+    color: aqua;
+}
+#footer strong{
+    color: orange;
+}
+
+/* GAMES IMAGES */
+
+.cards{
+    height: 90%;
+    width: 22%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#dinorun{
+    background-image: url(gimages/trex.jpg);
+    background-size: 22vw 28vh;
+}
+#whacmole{
+    background-image: url(gimages/whacmole.jpg);
+    background-size: 22vw 28vh;
+}
+#flappybird{
+    background-image: url(gimages/flappybird2.jpg);
+    background-size: 22vw 28vh;
+}
+#tictac{
+    background-image: url(gimages/tictac.png);
+    background-size: 22vw 28vh;
+}
+#align4{
+    background-image: url(gimages/Align4.jpg);
+    background-size: 22vw 28vh;
+}
+#twenty{
+    background-image: url(gimages/2048.png);
+    background-size: 22vw 28vh;
+}
+#crossy{
+    background-image: url(gimages/crossy.jpg);
+    background-size: 22vw 28vh;
+}
+#stickman{
+    background-image: url(gimages/stickman.png);
+    background-size: 25vw 28vh;
+}
+#pacman{
+    background-image: url(gimages/pacman.jpg);
+    background-size: 25vw 28vh;
+}
+#mario{
+    background-image: url(gimages/mario.jpg);
+    background-size: 25vw 28vh;
+}
+#spacehuggers{
+    background-image: url(gimages/spacehuggers.jpg);
+    background-size: 25vw 28vh;
+}
+#shuttle{
+    background-image: url(gimages/shuttle.jpg);
+    background-size: 25vw 28vh;
+}
+#minecraft{
+    background-image: url(gimages/minecraft.png);
+    background-size: 22vw 28vh;
+}
+#cookie{
+    background-image: url(gimages/cookie.jpg);
+    background-size: 22vw 28vh;
+}
+#hexgl{
+    background-image: url(gimages/hexgl.jpg);
+    background-size: 22vw 28vh;
+}
+#dailyword{
+    background-image: url(gimages/dailyword.webp);
+    background-size: 22vw 28vh;
+}
+#bloonstd{
+    background-image: url(gimages/bloonstd.jpg);
+    background-size: 22vw 28vh;
+}
+#racer{
+    background-image: url(gimages/racer.webp);
+    background-size: 22vw 28vh;
+}
+#cannonbasket{
+    background-image: url(gimages/cannonbasketball.png);
+    background-size: 22vw 28vh;
+}
+#hextris{
+    background-image: url(gimages/hextris.webp);
+    background-size: 22vw 28vh;
+}
+#madacar2{
+    background-image: url(gimages/madacar2.avif);
+    background-size: 22vw 28vh;
+}
+#madacar3{
+    background-image: url(gimages/madacar3.avif);
+    background-size: 22vw 28vh;
+}
+#doodlej{
+    background-image: url(gimages/doodlej.webp);
+    background-size: 22vw 28vh;
+}
+#boxel{
+    background-image: url(gimages/boxel.jpg);
+    background-size: 22vw 28vh;
+}
+#ducklife{
+    background-image: url(gimages/ducklife.jpg);
+    background-size: 22vw 28vh;
+}
+#papery{
+    background-image: url(gimages/papery.jpg);
+    background-size: 22vw 28vh;
+}
+#stack{
+    background-image: url(gimages/stack.jpg);
+    background-size: 22vw 28vh;
+}
+
+/* GAMES IMAGES
+
+.cards{
+    height: 75%;
+    width: 20%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#dinorun{
+    background-image: url(gimages/trex.jpg);
+    background-size: 22vw 25vh;
+}
+#whacmole{
+    background-image: url(gimages/whacmole.jpg);
+    background-size: 22vw 25vh;
+}
+#flappybird{
+    background-image: url(gimages/flappybird2.jpg);
+    background-size: 22vw 25vh;
+}
+#tictac{
+    background-image: url(gimages/tictac.png);
+    background-size: 22vw 25vh;
+}
+#align4{
+    background-image: url(gimages/Align4.jpg);
+    background-size: 22vw 25vh;
+}
+#twenty{
+    background-image: url(gimages/2048.png);
+    background-size: 22vw 25vh;
+}
+#crossy{
+    background-image: url(gimages/crossy.jpg);
+    background-size: 22vw 25vh;
+}
+#stickman{
+    background-image: url(gimages/stickman.png);
+    background-size: 25vw 25vh;
+}
+#pacman{
+    background-image: url(gimages/pacman.jpg);
+    background-size: 25vw 25vh;
+}
+#mario{
+    background-image: url(gimages/mario.jpg);
+    background-size: 25vw 25vh;
+}
+#spacehuggers{
+    background-image: url(gimages/spacehuggers.jpg);
+    background-size: 25vw 25vh;
+}
+#shuttle{
+    background-image: url(gimages/shuttle.jpg);
+    background-size: 25vw 25vh;
+}
+#minecraft{
+    background-image: url(gimages/minecraft.png);
+    background-size: 22vw 25vh;
+}
+#cookie{
+    background-image: url(gimages/cookie.jpg);
+    background-size: 22vw 25vh;
+}
+#hexgl{
+    background-image: url(gimages/hexgl.jpg);
+    background-size: 22vw 25vh;
+}
+#dailyword{
+    background-image: url(gimages/dailyword.webp);
+    background-size: 22vw 25vh;
+}
+#bloonstd{
+    background-image: url(gimages/bloonstd.jpg);
+    background-size: 22vw 25vh;
+}
+#racer{
+    background-image: url(gimages/racer.webp);
+    background-size: 22vw 25vh;
+}
+#cannonbasket{
+    background-image: url(gimages/cannonbasketball.png);
+    background-size: 22vw 25vh;
+}
+#hextris{
+    background-image: url(gimages/hextris.webp);
+    background-size: 22vw 25vh;
+}
+#madacar2{
+    background-image: url(gimages/madacar2.avif);
+    background-size: 22vw 25vh;
+}
+#madacar3{
+    background-image: url(gimages/madacar3.avif);
+    background-size: 22vw 25vh;
+}
+#doodlej{
+    background-image: url(gimages/doodlej.webp);
+    background-size: 22vw 25vh;
+}
+#boxel{
+    background-image: url(gimages/boxel.jpg);
+    background-size: 22vw 25vh;
+}
+#ducklife{
+    background-image: url(gimages/ducklife.jpg);
+    background-size: 22vw 25vh;
+}
+#papery{
+    background-image: url(gimages/papery.jpg);
+    background-size: 22vw 25vh;
+}
+#stack{
+    background-image: url(gimages/stack.jpg);
+    background-size: 22vw 25vh;
+} */
